@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.lang.Math.*;
+import java.lang.Math;
 
 public class Assessment1
 {
@@ -27,25 +27,19 @@ public class Assessment1
         return (numToCheck > min) && (numToCheck < max);
     }
 
-    private static Boolean dateValidator(int day, int month, int year)
+    private static boolean dateValidator(int day, int month, int year)
     {
-        int[] array1 = {31,0,31,30,31,30,31,31,30,31,30,31};
-        if (month != 2 && month <=12)
-        {
-            for (int i = 0; i < array1.length; i++)
-            {
-                if (month == (i+1) && day <=array1[i])
-                {
-                    return true;
-                }
-            }
-        } else if  ((year % 4 == 0 && year % 100 != 0) || (year % 100 == 0 && year % 400 == 0)) {
-            return day<=29;
-        } else {
-            return day<=28;
-        };
+        int[] array1 = {31,28,31,30,31,30,31,31,30,31,30,31};
 
-        return false;
+        boolean check = false;
+        for (int k = 0; k < array1.length; k++)
+        {
+            if (((month == k+1) && (day <= array1[k])) || ((month == 2 && day<=29) && ((year % 4 == 0 && year % 100 != 0) || (year % 100 == 0 && year % 400 == 0)))) {
+                check =  true;
+                break;
+            }
+        }
+        return check;
     }
     public void task1()
     {
@@ -84,7 +78,7 @@ public class Assessment1
         int day = takeIn.nextInt();
         int month = takeIn.nextInt();
         int year = takeIn.nextInt();
-        Boolean validation = numberValidator(day,month,year);
+        boolean validation = dateValidator(day,month,year);
         if (validation){
             System.out.println("The date is valid.");
         } else {
