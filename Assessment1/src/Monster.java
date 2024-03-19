@@ -1,50 +1,90 @@
+// Name: Sri Shanka
+// version 1
+// Monster class for A1
+
 public class Monster
 {
     // code your task 2a here
     private String monsterName;
-    private int attackVal,defenceVal,healthVal;
+    private int attackValue,defenceValue,healthValue;
 
     //Constructor
     public Monster()
     {
+
         monsterName = "Tom";
-        attackVal = 5;
-        defenceVal = 5;
-        healthVal = 5;
+        attackValue = 5;
+        defenceValue = 5;
+        healthValue = 5;
+
     }
 
     //Constructor
-    public Monster(String newName,int newAttackVal, int newDefenceVal, int newHealthVal){
+    public Monster(String newName,int newAttackVal, int newDefenceVal, int newHealthVal)
+    {
+
         monsterName = newName;
-        attackVal = newAttackVal;
-        defenceVal = newDefenceVal;
-        healthVal = newHealthVal;
+        attackValue = newAttackVal;
+        defenceValue = newDefenceVal;
+        healthValue = newHealthVal;
+
     }
 
-    public String getMonsterName(){
+    public int getAttackVal()
+    {
+
+        return attackValue;
+
+    }
+
+    public int getDefenceVal()
+    {
+
+        return defenceValue;
+
+    }
+
+    public int getHealthVal()
+    {
+
+        return healthValue;
+
+    }
+
+    public String getMonsterName()
+    {
+
         return monsterName;
-    }
-    public int getAttackVal(){
-        return attackVal;
-    }
-    public int getDefenceVal(){
-        return defenceVal;
-    }
-    public int getHealthVal(){
-        return healthVal;
+
     }
 
-    public void setMonsterName(String newName){
+    public void setAttackVal(int newAttackVal)
+    {
+
+        attackValue = newAttackVal;
+
+    }
+
+    public void setDefenceVal(int newDefenceVal)
+    {
+
+        defenceValue = newDefenceVal;
+
+    }
+
+    public void setHealthVal(int newHealthVal)
+    {
+
+        healthValue = newHealthVal;
+
+    }
+
+    public void setMonsterName(String newName)
+    {
+
         monsterName = newName;
+
     }
-    public void setAttackVal(int newAttackVal){
-        attackVal = newAttackVal;
-    }
-    public void setDefenceVal(int newDefenceVal){
-        defenceVal = newDefenceVal;
-    }
-    public void setHealthVal(int newHealthVal){
-        healthVal = newHealthVal;
-    }
+
 
 }
